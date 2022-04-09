@@ -1,4 +1,7 @@
-const repas = [{
+localStorage.clear() //elimina toda la información
+sessionStorage.clear() //elimina toda la información
+
+const repasNivel = [{
         id: 1,
         siglas: "SSAPAC"
     },
@@ -10,9 +13,73 @@ const repas = [{
         id: 3,
         siglas: "DGSICOM"
     },
-]
+    {
+        id: 4,
+        siglas: "ADM"
+    }
+];
+
+
+let usuarios = [{
+        nombreUsuario: "Facundo",
+        apellidoUsuario: "Grondona",
+        idUsuario: 20286932400,
+        mailUsuario: "facundogrondona@gmail.com",
+        nivelUsuario: "DGATP",
+        usuarioPassword: 123
+
+    },
+    {
+        nombreUsuario: "adm",
+        apellidoUsuario: "adm",
+        idUsuario: 123456,
+        mailUsuario: "facundogrondona@gmail.com",
+        nivelUsuario: "ADM",
+        usuarioPassword: 123
+
+    }
+];
+console.table(usuarios);
+
+
+// Inicio login in ///
+
+function Login() {
+    let uId = document.querySelector(`#inputUsuario`);
+    let uPas = document.querySelector(`#inputPassword`);
+    console.log(uId);
+    console.log(uPas);
+
+    // recorrer un array para validar usuario
+    let inOF = usuarios.indexOf(uId);
+    let inPAS = usuarios.indexOf(uPas);
+    console.log(inOF);
+
+    if (inOF != -1) {
+        alert("verifique su numero de usuario");
+        
+    }
+    else if (inPAS != -1){
+        alert("verifique su password");
+        
+    } else {
+        window.location.href = "../senciones/principal.html";
+    }
+
+};
+
+
+// Evento Login in //
+
+console.table(usuarios);
+
+let botonlogin = document.querySelector("#btLogin");
+botonlogin.addEventListener("click", Login);
+
+// Inicio login in ///
 
 let nomina = [];
+
 let estrategias = [{
         nombre: "detectar",
         cantidad: 100
@@ -25,13 +92,13 @@ let estrategias = [{
         nombre: "ADM. Central",
         cantidad: 17
     },
-]
+];
 
 console.table(estrategias);
 
 
 class Estrtategia {
-    constructor(nombre, cantidad, perfil) {
+    constructor(nombre, cantidad) {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
@@ -40,7 +107,7 @@ class Estrtategia {
         return "La estatregia ha sido creado con exito";
     }
 
-}
+};
 
 class ALtaprersona {
     constructor(nombre, apellido, cuil, celular, mail, reparticion, funcion, desde, hasta, sueldo, estrateg) {
@@ -55,7 +122,7 @@ class ALtaprersona {
         this.hasta = hasta;
         this.sueldo = sueldo;
         this.estrateg = estrateg;
-        
+
 
     }
 
@@ -63,7 +130,7 @@ class ALtaprersona {
         return "El alta del agente fue cargada exitosamente";
     }
 
-}
+};
 
 
 
@@ -75,28 +142,28 @@ while (accion == "") {
     alert("Ingrese un dato valido");
     accion = prompt("Ingrese la lestra: A si desea crear una nueva estrategia o B si desea dar de alta una persona");
     console.log(accion);
-}    
+}
 Number
 
-    if ((accion == "A") || (accion == "B")) {
-        switch (accion) {
-            case "A":
-                let nombestrategia = prompt("Ingrese el nombre de la Estrategia");
-                let cantidad = prompt("ingrese la cantidad de LOYS que requiere la estrategia");
-                const est = new Estrtategia(nombestrategia, Number(cantidad));
+if ((accion == "A") || (accion == "B")) {
+    switch (accion) {
+        case "A":
+            let nombestrategia = prompt("Ingrese el nombre de la Estrategia");
+            let cantidad = prompt("ingrese la cantidad de LOYS que requiere la estrategia");
+            const est = new Estrtategia(nombestrategia, Number(cantidad));
 
-                console.log(est);
-                console.log(Estrtategia.altaestrategia);
-                estrategias.push(est);
-                console.table(estrategias);
-                let respuesta = prompt(`desea incorporar persanal a la nueva ${est.nombre} (SI-NO)`);
-                if (respuesta = "NO"){
-                    break; 
-                }else {
-                    console.log("Parte a desarrollar")
-                }
+            console.log(est);
+            console.log(Estrtategia.altaestrategia);
+            estrategias.push(est);
+            console.table(estrategias);
+            let respuesta = prompt(`desea incorporar personal a la nueva ${est.nombre} (SI-NO)`);
+            if (respuesta = "NO") {
+                break;
+            } else {
+                console.log("Parte a desarrollar")
+            }
 
-                
+
             case "B":
                 let nombre = prompt("Ingrese el nombre del agente");
                 let apellido = prompt("ingrese el apellido");
@@ -118,31 +185,32 @@ Number
 
                 break;
 
-        }
-
-    } else {
-        alert("Ingrese un dato valido");
-        accion = prompt("Ingrese la lestra: A si desea crear una nueva estrategia o B si desea dar de alta una persona");
     }
 
+} else {
+    alert("Ingrese un dato valido");
+    accion = prompt("Ingrese la lestra: A si desea crear una nueva estrategia o B si desea dar de alta una persona");
+}
 
 
-  
 
-  class Tramite {
+
+
+class Tramite {
     constructor(ccooalta, numeroExpediente, estadaExp, reso, facturado) {
-      this.ccooalta = ccooalta;
-      this.numeroExpediente = numeroExpediente;
-      this.estadaExp = estadaExp;
-      this.reso = reso;
-      this.facturado = facturado;
-      
-    }
-    
-  }
+        this.ccooalta = ccooalta;
+        this.numeroExpediente = numeroExpediente;
+        this.estadaExp = estadaExp;
+        this.reso = reso;
+        this.facturado = facturado;
 
-  const resultado2 = estrategias.filter((el) => el.cantidad < 50);
-  console.table(resultado2);
+    }
+
+};
+
+const resultado2 = estrategias.filter((el) => el.cantidad < 50);
+console.table(resultado2);
 
 
   
+

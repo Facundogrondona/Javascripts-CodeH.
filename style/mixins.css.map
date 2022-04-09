@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../style.scss/argon-dashboard/mixins/mixins.scss",
+        "../style.scss/argon-dashboard/mixins/_badge.scss",
+        "../style.scss/argon-dashboard/mixins/_hover.scss",
+        "../style.scss/argon-dashboard/mixins/_colored-shadows.scss",
+        "../style.scss/argon-dashboard/mixins/_social-buttons.scss"
+    ],
+    "names": [],
+    "file": "mixins.css"
+}
